@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f5f5f7">
+<meta name="description" content="Baani Luthra — UI/UX Lead crafting thoughtful, intuitive digital experiences.">
+<title>Baani Luthra — UI/UX Lead</title>
+<style>
+:root{--bg:#f5f5f7;--surface:#fff;--ink:#1d1d1f;--muted:#6e6e73;--blue:#06c;--line:rgba(29,29,31,.12);--dark:#000;--radius:28px;--max:1120px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue",Arial,sans-serif;letter-spacing:-.022em;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button,a{-webkit-tap-highlight-color:transparent}
+.nav-wrap{position:sticky;top:0;z-index:10;background:rgba(245,245,247,.78);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,.06)}
+nav{height:54px;max-width:var(--max);padding:0 24px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{font-size:15px;font-weight:650;letter-spacing:-.04em;white-space:nowrap}
+.nav-links{display:flex;align-items:center;gap:26px;font-size:12px;color:#424245}
+.nav-links a{transition:color .2s}.nav-links a:hover{color:var(--blue)}
+.nav-cta{color:var(--blue)!important}
+.menu-btn{display:none;background:none;border:0;font-size:22px;color:var(--ink)}
+main{overflow:hidden}
+.container{width:min(var(--max),calc(100% - 48px));margin-inline:auto}
+.hero{min-height:680px;display:flex;align-items:center;justify-content:center;text-align:center;padding:100px 0 88px;position:relative}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.02em;color:var(--muted);margin:0 0 20px}
+.hero h1{font-size:clamp(58px,10vw,116px);line-height:.94;letter-spacing:-.085em;font-weight:700;margin:0 auto;max-width:950px}
+.gradient{background:linear-gradient(100deg,#6e6e73 0%,#1d1d1f 35%,#0071e3 76%,#9a6bff 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-sub{font-size:clamp(19px,2.3vw,26px);line-height:1.4;letter-spacing:-.04em;color:#515154;max-width:650px;margin:28px auto 0}
+.hero-actions{display:flex;justify-content:center;align-items:center;gap:24px;margin-top:34px;flex-wrap:wrap}
+.pill{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:13px 21px;font-size:14px;font-weight:550;transition:transform .2s,background .2s}
+.pill:hover{transform:translateY(-2px)}
+.pill.primary{background:var(--blue);color:white}
+.pill.secondary{color:var(--blue);padding-inline:4px}
+.arrow{font-size:18px;line-height:0}
+.hero-art{margin:70px auto 0;width:min(780px,100%);height:150px;position:relative;display:flex;align-items:center;justify-content:center}
+.orbit{position:absolute;border:1px solid rgba(0,113,227,.2);border-radius:50%;transform:rotate(-12deg)}
+.orbit.one{width:78%;height:90px}.orbit.two{width:58%;height:130px;transform:rotate(18deg);border-color:rgba(133,91,255,.22)}
+.orb{width:82px;height:82px;border-radius:28px;background:linear-gradient(145deg,#fff,#dfe8ff 42%,#8ab8ff);box-shadow:inset -8px -9px 18px rgba(0,70,180,.12),0 24px 50px rgba(0,82,204,.16);transform:rotate(-12deg);position:relative}
+.orb:after{content:"";position:absolute;top:15px;left:16px;width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.9);filter:blur(1px)}
+.section{padding:88px 0}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:34px}
+.kicker{font-size:13px;color:var(--muted);font-weight:600;margin:0 0 12px}
+h2{font-size:clamp(34px,5.5vw,58px);line-height:1.03;letter-spacing:-.07em;margin:0;font-weight:650}
+.section-intro{max-width:370px;color:var(--muted);font-size:16px;line-height:1.55;margin:0}
+.about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:18px}
+.card{background:var(--surface);border-radius:var(--radius);padding:36px}
+.about-copy{font-size:clamp(22px,2.8vw,32px);line-height:1.32;letter-spacing:-.05em;margin:0}
+.about-copy strong{font-weight:650}
+.small-note{font-size:14px;line-height:1.6;color:var(--muted);margin:22px 0 0}
+.skill-card{background:#e8e8ed}
+.skill-card h3,.card h3{font-size:21px;letter-spacing:-.045em;margin:0 0 22px}
+.skill-list{display:flex;flex-wrap:wrap;gap:9px}
+.chip{font-size:13px;border:1px solid rgba(29,29,31,.12);border-radius:999px;padding:10px 13px;background:rgba(255,255,255,.65);color:#3a3a3c}
+.timeline{display:grid;gap:12px}
+.job{background:white;border-radius:22px;padding:25px 28px;display:grid;grid-template-columns:1fr auto;gap:12px 24px;align-items:center;transition:transform .22s,box-shadow .22s}
+.job:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(0,0,0,.045)}
+.job h3{font-size:20px;margin:0 0 5px;letter-spacing:-.045em}
+.job .role{font-size:14px;color:var(--muted);margin:0}
+.job .date{font-size:13px;color:var(--muted);text-align:right;white-space:nowrap}
+.job .tag{font-size:11px;letter-spacing:.03em;text-transform:uppercase;font-weight:650;color:#0071e3;background:#eaf3ff;border-radius:999px;padding:7px 10px;display:inline-block;margin-top:12px}
+.education-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.edu{min-height:200px;display:flex;flex-direction:column;justify-content:space-between}
+.edu .edu-icon{width:43px;height:43px;border-radius:14px;background:#f0f0f5;display:grid;place-items:center;font-size:21px;margin-bottom:28px}
+.edu h3{font-size:19px;line-height:1.25;margin:0 0 10px}
+.edu p{font-size:13px;color:var(--muted);line-height:1.45;margin:0}
+.edu .year{font-size:12px;color:var(--muted);margin-top:18px}
+.product-band{background:#000;color:#f5f5f7;border-radius:34px;padding:64px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:40px;position:relative;overflow:hidden}
+.product-band:after{content:"";position:absolute;width:380px;height:380px;border-radius:50%;right:-90px;top:-160px;background:radial-gradient(circle,rgba(0,113,227,.42),rgba(0,0,0,0) 68%);pointer-events:none}
+.product-band h2{max-width:650px;position:relative;z-index:1}
+.product-band p{font-size:16px;line-height:1.6;color:#a1a1a6;max-width:570px;margin:20px 0 0;position:relative;z-index:1}
+.product-band .pill{background:#f5f5f7;color:#111;position:relative;z-index:1;white-space:nowrap}
+.contact{padding:110px 0 100px;text-align:center}
+.contact h2{font-size:clamp(44px,8vw,88px);max-width:850px;margin:auto}
+.contact p{font-size:19px;color:var(--muted);margin:22px auto 30px;line-height:1.5}
+.contact-links{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.contact-links .pill{padding:14px 20px}
+footer{border-top:1px solid var(--line);padding:22px 0 30px;color:var(--muted);font-size:12px}
+.footer-inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}*{transition:none!important}}
+@media(max-width:700px){
+ nav{padding:0 20px}.nav-links{display:none;position:absolute;top:54px;left:0;right:0;background:rgba(245,245,247,.97);padding:18px 24px 24px;flex-direction:column;align-items:flex-start;gap:20px;border-bottom:1px solid var(--line)}
+ .nav-links.open{display:flex}.menu-btn{display:block}.container{width:calc(100% - 36px)}
+ .hero{min-height:auto;padding:95px 0 60px}.hero h1{font-size:clamp(55px,15vw,86px)}.hero-art{margin-top:48px;height:110px}.orb{width:65px;height:65px;border-radius:22px}
+ .section{padding:60px 0}.section-head{display:block}.section-intro{margin-top:18px}.about-grid{grid-template-columns:1fr}.card{padding:27px}
+ .job{padding:22px;grid-template-columns:1fr}.job .date{text-align:left;grid-row:2}.job .job-meta{grid-row:3}
+ .education-grid{grid-template-columns:1fr}.edu{min-height:160px}
+ .product-band{padding:36px 27px;grid-template-columns:1fr;gap:25px;border-radius:27px}.product-band .pill{justify-self:start}
+ .contact{padding:80px 0}.contact p{font-size:17px}
+}
+</style>
+</head>
+<body>
+<div class="nav-wrap">
+  <nav aria-label="Main navigation">
+    <a class="brand" href="#home">Baani Luthra<span style="color:#06c">.</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#learning">Currently learning</a><a class="nav-cta" href="#contact">Let's talk <span class="arrow">↗</span></a>
+    </div>
+  </nav>
+</div>
+<main>
+  <section class="hero container" id="home">
+    <div>
+      <p class="eyebrow">UI/UX LEAD · NEW DELHI, INDIA</p>
+      <h1>Designing for<br><span class="gradient">people, not pixels.</span></h1>
+      <p class="hero-sub">I'm Baani — a detail-oriented designer creating visually thoughtful, intuitive digital experiences.</p>
+      <div class="hero-actions">
+        <a class="pill primary" href="#experience">Explore my journey <span class="arrow">↓</span></a>
+        <a class="pill secondary" href="mailto:baaniluthra01@gmail.com">Get in touch <span class="arrow">↗</span></a>
+      </div>
+      <div class="hero-art" aria-hidden="true"><div class="orbit one"></div><div class="orbit two"></div><div class="orb"></div></div>
+    </div>
+  </section>
+
+  <section class="section container" id="about">
+    <div class="section-head reveal">
+      <div><p class="kicker">A LITTLE ABOUT ME</p><h2>Thoughtful by design.</h2></div>
+      <p class="section-intro">A mix of visual craft, curiosity, and a growing product mindset.</p>
+    </div>
+    <div class="about-grid">
+      <article class="card reveal">
+        <p class="about-copy">I care about making digital experiences feel <strong>clear, considered, and easy to use.</strong> With experience across UI/UX and graphic design, I bring visual sensibility and user-focused thinking to the work.</p>
+        <p class="small-note">I work with Adobe creative tools and Figma, and keep exploring new design trends and technologies.</p>
+      </article>
+      <article class="card skill-card reveal">
+        <h3>Tools & strengths</h3>
+        <div class="skill-list">
+          <span class="chip">UI/UX Design</span><span class="chip">Visual Design</span><span class="chip">Graphic Design</span><span class="chip">Figma</span><span class="chip">Adobe Suite</span><span class="chip">Graphics Software</span><span class="chip">Product Thinking</span>
+        </div>
+        <p class="small-note">My path is expanding from designing interfaces to understanding the product decisions behind them.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section container" id="experience">
+    <div class="section-head reveal">
+      <div><p class="kicker">THE JOURNEY SO FAR</p><h2>Experience.</h2></div>
+      <p class="section-intro">A growing practice across digital design, visual communication, and consulting.</p>
+    </div>
+    <div class="timeline">
+      <article class="job reveal"><div><h3>Crease Design Works</h3><p class="role">UI/UX Lead</p><span class="tag">Current role</span></div><div class="date">June 2026 — Present</div></article>
+      <article class="job reveal"><div><h3>Crease Design Works</h3><p class="role">UI/UX Designer</p></div><div class="date">October 2024 — June 2026</div></article>
+      <article class="job reveal"><div><h3>Creditor Academy</h3><p class="role">UI/UX Consultant</p></div><div class="date">March 2025 — April 2025</div></article>
+      <article class="job reveal"><div><h3>Steelbird Hi-Tech India Ltd.</h3><p class="role">Graphic Designer</p></div><div class="date">March 2024 — July 2024</div></article>
+      <article class="job reveal"><div><h3>Freres Brand Pvt Ltd</h3><p class="role">Graphic Design Intern</p></div><div class="date">January 2024 — March 2024</div></article>
+      <article class="job reveal"><div><h3>SOYARICH FOODS</h3><p class="role">Graphic Designer</p></div><div class="date">February 2023 — April 2023</div></article>
+      <article class="job reveal"><div><h3>Collabgenics</h3><p class="role">Graphic Designer</p></div><div class="date">September 2022 — November 2022</div></article>
+    </div>
+  </section>
+
+  <section class="section container" id="education">
+    <div class="section-head reveal">
+      <div><p class="kicker">FOUNDATIONS</p><h2>Education.</h2></div>
+      <p class="section-intro">Building a strong design foundation while continuing to learn.</p>
+    </div>
+    <div class="education-grid">
+      <article class="card edu reveal"><div><div class="edu-icon">✳</div><h3>Delhi Skill and Entrepreneurship University</h3><p>Higher education</p></div><p class="year">2021 — 2024</p></article>
+      <article class="card edu reveal"><div><div class="edu-icon">⌘</div><h3>Adarsh Public School</h3><p>Senior Secondary Education</p></div><p class="year">2020 — 2021</p></article>
+      <article class="card edu reveal"><div><div class="edu-icon">↗</div><h3>HelloPM</h3><p>AI Product Management Program · Product Management</p></div><p class="year">August — December 2026</p></article>
+    </div>
+  </section>
+
+  <section class="section container" id="learning">
+    <div class="product-band reveal">
+      <div><p class="kicker" style="color:#a1a1a6">WHAT'S NEXT</p><h2>Design meets product thinking.</h2><p>I'm broadening my perspective through AI Product Management studies — exploring how user needs, business goals, and technology come together to shape better products.</p></div>
+      <a class="pill" href="https://www.linkedin.com/in/baani-luthra-7ab402244/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn <span class="arrow">↗</span></a>
+    </div>
+  </section>
+
+  <section class="contact container" id="contact">
+    <p class="kicker">HAVE A GOOD PROJECT IN MIND?</p>
+    <h2 class="reveal">Let's make something meaningful.</h2>
+    <p class="reveal">For collaborations, opportunities, or just a thoughtful conversation.</p>
+    <div class="contact-links reveal">
+      <a class="pill primary" href="mailto:baaniluthra01@gmail.com">Email me <span class="arrow">↗</span></a>
+      <a class="pill secondary" href="https://www.linkedin.com/in/baani-luthra-7ab402244/" target="_blank" rel="noopener noreferrer">LinkedIn <span class="arrow">↗</span></a>
+    </div>
+  </section>
+</main>
+<footer><div class="container footer-inner"><span>© <span id="year"></span> Baani Luthra</span><span>Designed with clarity and care.</span><a href="#home">Back to top ↑</a></div></footer>
+<script>
+const menuBtn=document.getElementById('menuBtn');
+const navLinks=document.getElementById('navLinks');
+menuBtn.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));menuBtn.textContent=open?'×':'☰';});
+navLinks.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{navLinks.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');menuBtn.textContent='☰';}));
+document.getElementById('year').textContent=new Date().getFullYear();
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
